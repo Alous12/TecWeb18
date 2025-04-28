@@ -87,7 +87,7 @@ body::before {
 .Barra-nav a:hover::after {
     width: 100%;
 }
-
+/*a*/
 
 .Barra-nav a.active {
     font-weight: bold; /* Más negrito */
