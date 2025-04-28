@@ -1,0 +1,246 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+    margin: 4px;
+}
+
+/* CONTAINER FIJO */
+.container {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: white;
+    border-bottom: 1px solid #eee;
+}
+
+/* ESPACIO PARA EL CONTENIDO DESPUÉS DEL HEADER */
+body::before {
+    content: "";
+    display: block;
+    height: 150px; /
+}
+
+
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 10px ;
+}
+
+
+.Titulo {
+    font-family: sans-serif;
+    width: 43%;
+}
+
+
+.Barra-nav {
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+.Barra-nav li {
+    position: relative; 
+    margin: 0 15px; 
+}
+
+.Barra-nav a {
+    color: black;
+    text-decoration: none;
+    font-weight: normal;
+    padding: 10px 0;
+    display: inline-block;
+    position: relative;
+}
+
+
+.Barra-nav a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #ccc; 
+}
+
+.Barra-nav a:hover::after {
+    width: 100%;
+}
+
+
+.Barra-nav a.active {
+    font-weight: bold; /* Más negrito */
+}
+
+.Barra-nav a.active::after {
+    width: 100%;
+    background-color: black; 
+}
+
+
+.buscador {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.subbuscador {
+    display: flex;
+    width: 40%;
+    height: 50px;
+    background-color: white;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+.boton {
+    width: auto;
+    padding: 10px 20px;
+    background-color: white;
+    border: 0;
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+    font-family: sans-serif;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.boton:hover {
+    background-color: rgb(197, 197, 197);
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+}
+
+/* Parte 2 - Tipos de Películas */
+.Tipos_pelicula {
+    list-style: none; /* Sacar viñetas */
+    display: flex;
+    justify-content: center;
+    gap: 70px;
+    margin-top: 20px;
+    font-family: sans-serif;
+    padding: 0; /* Quitar espaciado extra */
+}
+
+.Tipos_pelicula li {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrar imagen y texto */
+    position: relative; /* Para que la línea quede bien */
+}
+
+.caja-logos, .Tipos_pelicula li a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    position: relative;
+    padding: 10px 0;
+}
+
+.logo {
+    width: 30px;
+    height: 50px;
+    border-radius: 50%;
+    margin-bottom: 5px;
+}
+
+/* Línea gris debajo */
+.Tipos_pelicula a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #ccc;
+}
+
+/* Hover efecto */
+.Tipos_pelicula a:hover::after {
+    width: 100%;
+}
+
+/* Activo */
+.Tipos_pelicula a.active {
+    font-weight: bold;
+}
+
+.Tipos_pelicula a.active::after {
+    width: 100%;
+    background-color: black;
+}
+
+
+/* Segunda Parte - Películas */
+.subcontainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 25px;
+    gap: 40px;
+}
+
+.peli {
+    width: 300px;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 12px 12px 0 0;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #f1f1f1;
+}
+
+/* Responsive */
+@media screen and (max-width: 964px) {
+    .peli {
+        width: 300px;
+        margin-bottom: 20px;
+    }
+    .img {
+        height: 200px;
+    }
+    .subcontainer {
+        flex-direction: row;
+        justify-content: center;
+        gap: 2rem;
+    }
+}
