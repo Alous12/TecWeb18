@@ -206,7 +206,7 @@ body::before {
 }
 
 .peli {
-    width: 300px;
+    width: 20%;
     box-sizing: border-box;
     background-color: white;
     border-radius: 12px;
